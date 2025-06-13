@@ -23,5 +23,11 @@ namespace CadastroProduto2.Modelos
             Preco = preco;
             Quantidade = quantidade;
         }
+
+        public override string ToString()
+        {
+            return string.Format("{0,-3} {1,-22}R$ {2,-8} {3,-4}UNIDADES",
+                Id, Nome, Preco, Quantidade);
+        }
     }
 }

@@ -1,0 +1,16 @@
+C:\temp\ws-c#\CadastroProduto2\CadastroProduto2\bin\Debug\net8.0\CadastroProduto2.exe
+C:\temp\ws-c#\CadastroProduto2\CadastroProduto2\bin\Debug\net8.0\CadastroProduto2.deps.json
+C:\temp\ws-c#\CadastroProduto2\CadastroProduto2\bin\Debug\net8.0\CadastroProduto2.runtimeconfig.json
+C:\temp\ws-c#\CadastroProduto2\CadastroProduto2\bin\Debug\net8.0\CadastroProduto2.dll
+C:\temp\ws-c#\CadastroProduto2\CadastroProduto2\bin\Debug\net8.0\CadastroProduto2.pdb
+C:\temp\ws-c#\CadastroProduto2\CadastroProduto2\obj\Debug\net8.0\CadastroProduto2.GeneratedMSBuildEditorConfig.editorconfig
+C:\temp\ws-c#\CadastroProduto2\CadastroProduto2\obj\Debug\net8.0\CadastroProduto2.AssemblyInfoInputs.cache
+C:\temp\ws-c#\CadastroProduto2\CadastroProduto2\obj\Debug\net8.0\CadastroProduto2.AssemblyInfo.cs
+C:\temp\ws-c#\CadastroProduto2\CadastroProduto2\obj\Debug\net8.0\CadastroProduto2.csproj.CoreCompileInputs.cache
+C:\temp\ws-c#\CadastroProduto2\CadastroProduto2\obj\Debug\net8.0\CadastroProduto2.sourcelink.json
+C:\temp\ws-c#\CadastroProduto2\CadastroProduto2\obj\Debug\net8.0\CadastroProduto2.dll
+C:\temp\ws-c#\CadastroProduto2\CadastroProduto2\obj\Debug\net8.0\refint\CadastroProduto2.dll
+C:\temp\ws-c#\CadastroProduto2\CadastroProduto2\obj\Debug\net8.0\CadastroProduto2.pdb
+C:\temp\ws-c#\CadastroProduto2\CadastroProduto2\obj\Debug\net8.0\CadastroProduto2.genruntimeconfig.cache
+C:\temp\ws-c#\CadastroProduto2\CadastroProduto2\obj\Debug\net8.0\ref\CadastroProduto2.dll
+C:\temp\ws-c#\CadastroProduto2\CadastroProduto2\bin\Debug\net8.0\Dados\BancoDeDadosJson.json

@@ -7,4 +7,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Dados\BancoDeDadosJson.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Dados\BancoDeDadosJson.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

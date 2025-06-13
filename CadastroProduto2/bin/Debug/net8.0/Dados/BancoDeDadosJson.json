@@ -1,0 +1,122 @@
+﻿[
+  {
+    "id": 1,
+    "nome": "Camiseta Básica",
+    "preco": 49.90,
+    "quantidade": 100
+  },
+  {
+    "id": 2,
+    "nome": "Calça Jeans",
+    "preco": 129.90,
+    "quantidade": 50
+  },
+  {
+    "id": 3,
+    "nome": "Tênis Esportivo",
+    "preco": 199.99,
+    "quantidade": 30
+  },
+  {
+    "id": 4,
+    "nome": "Jaqueta Corta-Vento",
+    "preco": 249.90,
+    "quantidade": 20
+  },
+  {
+    "id": 5,
+    "nome": "Boné Estampado",
+    "preco": 39.90,
+    "quantidade": 75
+  },
+  {
+    "id": 6,
+    "nome": "Meia Cano Alto",
+    "preco": 19.90,
+    "quantidade": 200
+  },
+  {
+    "id": 7,
+    "nome": "Óculos de Sol",
+    "preco": 89.90,
+    "quantidade": 60
+  },
+  {
+    "id": 8,
+    "nome": "Relógio Digital",
+    "preco": 149.90,
+    "quantidade": 35
+  },
+  {
+    "id": 9,
+    "nome": "Mochila Escolar",
+    "preco": 99.90,
+    "quantidade": 40
+  },
+  {
+    "id": 10,
+    "nome": "Carteira Masculina",
+    "preco": 59.90,
+    "quantidade": 80
+  },
+  {
+    "id": 11,
+    "nome": "Cinto Couro",
+    "preco": 44.90,
+    "quantidade": 90
+  },
+  {
+    "id": 12,
+    "nome": "Chinelo Slide",
+    "preco": 39.90,
+    "quantidade": 65
+  },
+  {
+    "id": 13,
+    "nome": "Camisa Social",
+    "preco": 119.90,
+    "quantidade": 45
+  },
+  {
+    "id": 14,
+    "nome": "Bermuda Sarja",
+    "preco": 89.90,
+    "quantidade": 70
+  },
+  {
+    "id": 15,
+    "nome": "Tênis Casual",
+    "preco": 179.90,
+    "quantidade": 55
+  },
+  {
+    "id": 16,
+    "nome": "Touca de Lã",
+    "preco": 29.90,
+    "quantidade": 120
+  },
+  {
+    "id": 17,
+    "nome": "Luvas Térmicas",
+    "preco": 34.90,
+    "quantidade": 95
+  },
+  {
+    "id": 18,
+    "nome": "Casaco Moletom",
+    "preco": 139.90,
+    "quantidade": 25
+  },
+  {
+    "id": 19,
+    "nome": "Camisa Polo",
+    "preco": 89.90,
+    "quantidade": 60
+  },
+  {
+    "id": 20,
+    "nome": "Jaqueta Jeans",
+    "preco": 189.90,
+    "quantidade": 15
+  }
+]
