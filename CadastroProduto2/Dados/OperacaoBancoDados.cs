@@ -15,19 +15,21 @@ namespace CadastroProduto2.Dados
         {
             // Le o arquivo JSON e o armazena na variavel CONTEUDO
             string conteudo = File.ReadAllText("BancoDeDadosJson.json");
+            
             // Iguinora letras maiusculas e minusculas
             var options = new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true,
             };
+
             // Converte o conteudo JSON em uma lista do tipo PRODUTO
             return JsonSerializer.Deserialize<List<Produto>>(conteudo, options);
         }
 
-        public static void Salvar(List<Produto> lista)
+        public static void Salvar(List<Produto> listaDeProdutos)
         {
             // Converte a lista de produtos em texto JSON
-            string conteudo = JsonSerializer.Serialize(lista);
+            string conteudo = JsonSerializer.Serialize(listaDeProdutos);
 
             // Escreve o conteudo no arquivo JSON, substituindo o anterior
             File.WriteAllText("BancoDeDadosJson.json", conteudo);

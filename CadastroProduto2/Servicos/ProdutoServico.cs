@@ -9,10 +9,15 @@ namespace CadastroProduto2.Servicos
 {
     internal class ProdutoServico
     {
-        public List<Produto> lista { get; private set; } = new List<Produto>();
+        public List<Produto> lista { get; private set; }
 
         public ProdutoServico() 
         {
+        }
+
+        public ProdutoServico(List<Produto> listaDeProdutos)
+        {
+            lista = listaDeProdutos;
         }
 
         // CADASTRA PRODUTO

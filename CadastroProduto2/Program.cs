@@ -4,6 +4,7 @@ using CadastroProduto2.Modelos;
 using CadastroProduto2.Servicos;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace MyApp
 {
@@ -11,17 +12,20 @@ namespace MyApp
     {
         static void Main(string[] args)
         {
+            CultureInfo.CurrentCulture = new CultureInfo("pt-BR");
+
             // Chama o metodo ESTATICO Carregar para preencher a lista
-            List<Produto> lista = OperacaoBancoDados.Carregar();
+            List<Produto> listaDeProdutos = OperacaoBancoDados.Carregar();
 
-            Console.WriteLine("Itens carregados: " + lista.Count);
-
+            // Imprime a quantidade de objetos na lista
+            Console.WriteLine("Itens carregados: " + listaDeProdutos.Count);
 
             // Imprime a lista
-            ProdutoImprimir.Imprimir(lista);
+            Console.WriteLine();
+            ProdutoImprimir.Imprimir(listaDeProdutos);
 
-            Console.ReadKey();
-            /*
+            // Cadastra novos produtos
+            Console.WriteLine();
             Console.Write("Digite SIM ou NAO para cadastrar novos produtos: ");
             string simOuNao = Console.ReadLine();
 
@@ -39,13 +43,19 @@ namespace MyApp
                 // cria um objeto com todos os atributos da classe protudo
                 Produto produto = new Produto(id, nome, preco, quantidade);
 
+                // instancia objeto do tipo ProdutoServico
+                ProdutoServico servico = new ProdutoServico(listaDeProdutos);
+
                 // chama metodo para salvar o objeto na lista
-                //produtoServico.Cadastro(produto);
+                servico.Cadastro(produto);
                 
                 // salvo os dados da lista em JSON no arquivo 
-                OperacaoBancoDados.Salvar(lista);
-            }
-            */
+                OperacaoBancoDados.Salvar(listaDeProdutos);
+
+                Console.WriteLine();
+                Console.WriteLine("Este item foi cadastrado:");
+                Console.WriteLine(string.Join(" - ", produto.ToString()));
+            }            
         }
     }
 }
