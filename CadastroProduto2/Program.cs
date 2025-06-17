@@ -28,107 +28,123 @@ namespace MyApp
             ProdutoImprimir.Imprimir(listaDeProdutos);
 
 
-            // Cadastra novos produtos - CRUD - CREATE
+
+
+
+
+            // CADASTRA NOVOS PRODUTOS - CRUD - CREATE
             Console.WriteLine();
             Console.Write("Digite SIM ou NAO para cadastrar novos produtos: ");
             string simOuNao = Console.ReadLine();
 
             if (simOuNao.ToLower() == "sim")
 
-            {
-                Console.Write("Digite o ID do produto: ");
-                int id = int.Parse(Console.ReadLine());
+            {   // Salva o ID digitado usando metodo com TryParse
+                int id = EntradaUsuario.LerInteiro("Digite o ID do produto: ");
 
                 // Verifica a disponibilidade do ID               
                 bool testaId = produtoServico.VerificaId(listaDeProdutos, id);
 
                 while (testaId == false)
                 {
-                    Console.Write("Esse id nao esta disponivel, digite outro:");
-                    id = int.Parse(Console.ReadLine());
+                    id = EntradaUsuario.LerInteiro("Esse id nao esta disponivel, digite outro:");
                     testaId = produtoServico.VerificaId(listaDeProdutos, id);
                 }
 
+
+
+                // Cadastra NOME do produto
                 Console.Write("Digite o NOME do Produto: ");
                 string nome = Console.ReadLine();
-                Console.Write("Digite o PRECO do produto: ");
-                double preco = double.Parse(Console.ReadLine());
-                Console.Write("Digite a QUANTIDADE do produto: ");
-                int quantidade = int.Parse(Console.ReadLine());
 
-                // cria um objeto com todos os atributos da classe protudo
+                // Cadastra PREÇO usando metodo com TryParse
+                double preco = EntradaUsuario.LerDouble("Digite o PREÇO do produto ");
+
+                // Cadastra QUANTIDADE usando metodo com TryParse
+                int quantidade = EntradaUsuario.LerInteiro("Digite a QUANTIDADE do produto ");
+
+
+
+                // Cria um objeto com todos os atributos da classe protudo
                 Produto novoProduto = new Produto(id, nome, preco, quantidade);
 
-                // instancia objeto do tipo ProdutoServico passando a lista JSON
+                // Instancia objeto do tipo ProdutoServico passando a lista JSON
                 ProdutoServico servico = new ProdutoServico(listaDeProdutos);
 
-                // chama metodo para salvar o novo objeto na lista
+                // Chama metodo para salvar o novo objeto na lista
                 servico.Cadastro(novoProduto);
 
-                // coverte os dados da lista em JSON e os salva no arquivo JSON
+                // Coverte os dados da lista em JSON e os salva no arquivo JSON
                 OperacaoBancoDados.Salvar(listaDeProdutos);
 
-                // mostra o item que foi adicionado na lista
+                // Mostra o item que foi adicionado na lista
                 Console.WriteLine();
                 Console.WriteLine("Este item foi cadastrado:");
                 Console.WriteLine(string.Join(" - ", novoProduto.ToString()));
             }
 
 
-            // Busca e imprime um produto especifico - CRUD - READ
+
+
+
+
+
+
+
+            // BUSCA E IMPRIME UM PRODUTO ESPECIFICO - CRUD - READ
             Console.WriteLine();
             Console.Write("Quer Imprimir algum item especifico? ");
             simOuNao = Console.ReadLine();
 
             if (simOuNao.ToLower() == "sim")
             {
-                Console.Write("Digite o ID do produto a ser impresso: ");
-                int buscaId = int.Parse(Console.ReadLine());
+                // Salva o ID digitado usando metodo com TryParse
+                int buscaId = EntradaUsuario.LerInteiro("Digite o ID do produto a ser impresso: ");
 
-                // instancia uma variavel e chama o metodo de BuscaProduto
+                // Atribui a um novo objeto o retorno do metodo de BuscaProduto
                 Produto produtoAImprimir = produtoServico.BuscaProduto(buscaId);
 
+                // Imprime o produto escolhido
                 Console.WriteLine(produtoAImprimir.ToString());
             }
 
 
-            // Atualiza um produto - CRUD - UPDATE
+
+
+
+
+
+
+            // ATUALIZA UM PRODUTO - CRUD - UPDATE
             Console.WriteLine();
             Console.Write("Quer alterar algum produto da lista? ");
             simOuNao = Console.ReadLine();
 
             if (simOuNao.ToLower() != "nao")
             {
-                Console.Write("Digite o ID do produto a ser alterado: ");
-                int buscaId = int.Parse(Console.ReadLine());
+                // Salva o ID digitado usando metodo com TryParse
+                int buscaId = EntradaUsuario.LerInteiro("Digite o ID do produto a ser alterado: ");
 
-                // atribui a um novo objeto o retorno do metodo BuscaProduto
+                // Atribui a um novo objeto, o retorno do metodo BuscaProduto
                 Produto produtoASerAlterado = produtoServico.BuscaProduto(buscaId);
 
-                // cadastra NOME
+
+                // Cadastra NOME
                 Console.Write("Digite o NOME do produto: ");
                 produtoASerAlterado.Nome = Console.ReadLine();
                 
-                // cadastra PREÇO
-                Console.Write("Digite o PRECO do produto: ");
-                if (!double.TryParse(Console.ReadLine(), out double preco))
-                {
-                    Console.WriteLine("Preço invalido, tente novamente.");
-                    return;
-                }
-                produtoASerAlterado.Preco = preco;
-                
-                // cadastra QUANTIDADE
-                Console.Write("Digite a QUANTIDADE: ");
-                if (!int.TryParse(Console.ReadLine(), out int quantidade))
-                {
-                    Console.WriteLine("Quantidade invalida, tente novamente.");
-                    return;
-                }
-                produtoASerAlterado.Quantidade = quantidade;
+                // Cadastra PREÇO usando metodo com TryParse
+                double preco = EntradaUsuario.LerDouble("Digite o PRECO do produto: ");
 
-                // salva a lista no arquivo JSON
+                // Cadastra QUANTIDADE usando metodo com TryParse
+                int quantidade = EntradaUsuario.LerInteiro("Digite a QUANTIDADE: ");
+                
+
+                // Salva a lista no arquivo JSON
                 OperacaoBancoDados.Salvar(listaDeProdutos);
+
+                // Imprime o PRODUTO que foi alterado
+                Console.WriteLine();
                 Console.WriteLine("Esse item foi alterado:" + produtoASerAlterado);
             }
 
@@ -139,23 +155,27 @@ namespace MyApp
 
 
 
-
-
-
-
-
-
-
-
-
-            // Exclui um produto - CRUD - DELETE
+            // EXCLUI UM PRODUTO - CRUD - DELETE
             Console.WriteLine();
             Console.Write("Quer excluir algum produto da lista? ");
             simOuNao = Console.ReadLine();
 
-            if (simOuNao == "sim")
+            if (simOuNao.ToLower() == "sim")
             {
+                // Salva o ID usando metodo com TryParse
+                int buscaId = EntradaUsuario.LerInteiro("Digite o ID do produto a ser EXCLUIDO ");
 
+                // Busca na lista o ID digitado
+                Produto excluiProduto = produtoServico.BuscaProduto(buscaId);
+
+                // Imprime item exlcuido
+                Console.WriteLine("Esse produto foi excluido: " + excluiProduto);
+
+                // Remove o item da lista
+                listaDeProdutos.Remove(excluiProduto);
+
+                // Salva lista no arquivo JSON
+                OperacaoBancoDados.Salvar(listaDeProdutos);
             }
         }
     }
